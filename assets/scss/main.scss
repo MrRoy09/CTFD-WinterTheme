@@ -87,7 +87,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid #dcdcdc;
   box-shadow: 0 2px 8px rgba(150, 180, 210, 0.2);
-
+  backdrop-filter: blur(10px);
   a,
   .nav-link {
     color: #0a192f !important;
@@ -238,7 +238,7 @@ body {
   font-family: 'Playfair Display', serif; /* Elegant serif font */
   font-size: 2rem; /* Prominent size */
   font-weight: 700; /* Bold for impact */
-  color: #2a5d8f; /* Dark bluish tone */
+  color: black; /* Dark bluish tone */
   text-align: center; /* Center alignment */
   margin: 20px auto; /* Spacing around the title */
   letter-spacing: 1.5px; /* Slightly spaced letters */

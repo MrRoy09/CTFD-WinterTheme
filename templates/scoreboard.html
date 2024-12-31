@@ -33,9 +33,9 @@
         <table class="table table-scoreboard table-striped align-middle" >
           <thead>
           <tr>
-            <th class ="score-board-text" style="width: 10px">{% trans %}Place{% endtrans %}</th>
-            <th class="text-start ps-3 score-board-text">{{ get_mode_as_word(capitalize=True) }}</th>
-            <th class="score-board-text">{% trans %}Score{% endtrans %}</th>
+            <th class ="heading-text" style="width: 10px">{% trans %}Place{% endtrans %}</th>
+            <th class="text-start ps-3 heading-text">{{ get_mode_as_word(capitalize=True) }}</th>
+            <th class="heading-text">{% trans %}Score{% endtrans %}</th>
           </tr>
           </thead>
 
@@ -66,3 +66,5 @@
 {% block scripts %}
   {{ Assets.js("assets/js/scoreboard.js") }}
 {% endblock %}
+Collapse
+

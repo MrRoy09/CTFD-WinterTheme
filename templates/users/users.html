@@ -52,11 +52,11 @@
             <tr>
               <td>
                 {% if scores_visible() %}
-                  <a href="{{ url_for('users.public', user_id=user.id) }}">
+                  <a href="{{ url_for('users.public', user_id=user.id) }}" style="font-weight: normal;">
                     {{ user.name | truncate(50) }}
                   </a>
                 {% else %}
-                  <span>{{ user.name | truncate(50) }}</span>
+                  <span style="font-weight: normal;">{{ user.name | truncate(50) }}</span>
                 {% endif %}
 
                 {% if user.bracket_id %}
@@ -139,12 +139,3 @@
   {{ Assets.js("assets/js/users/list.js") }}
 {% endblock %}
 Collapse
-
-
-
-
-
-
-
-
-
