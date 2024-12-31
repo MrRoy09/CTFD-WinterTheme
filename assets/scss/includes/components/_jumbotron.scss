@@ -1,0 +1,25 @@
+/* Jumbotron styles
+-------------------------------------------------- */
+
+// Move down content because we have a fixed navbar that is 3.5rem tall
+main {
+  padding-top: 3.5rem;
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.jumbotron h1, .jumbotron p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: black; /* Slight shadow for text to pop */
+}
+
+
+@media (min-width: 576px) {
+  .jumbotron {
+    padding: 4rem 2rem;
+  }
+}

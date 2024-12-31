@@ -1,0 +1,215 @@
+@use "bootstrap/scss/bootstrap" as * with ($info: #a8c5e0);
+
+@use "includes/components/table";
+@use "includes/components/jumbotron";
+@use "includes/components/challenge";
+@use "includes/components/sticky-footer";
+@use "includes/components/graphs";
+
+@use "includes/utils/fonts";
+@use "includes/utils/opacity";
+@use "includes/utils/min-height";
+@use "includes/utils/cursors";
+@use "includes/utils/lolight";
+
+@use "includes/icons/award-icons";
+@use "includes/icons/flag-icons";
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+h1,
+h2 {
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+blockquote {
+  border-left: 4px solid $secondary;
+  padding-left: 15px;
+}
+
+input,
+select,
+button {
+  padding: 0.6rem !important;
+  height: auto !important;
+}
+
+.fa-spin.spinner {
+  text-align: center;
+  opacity: 0.5;
+}
+
+.badge-notification {
+  vertical-align: top;
+  margin-left: -1.5em;
+  font-size: 50%;
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e");
+  background-size: 8px 10px;
+}
+
+.snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: transparent;
+
+  video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+}
+
+body {
+  background-image: url('/themes/winter/static/img/background2.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.navbar {
+  display: block;
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid #dcdcdc;
+
+  box-shadow: 0 2px 8px rgba(150, 180, 210, 0.2);
+
+  a,
+  .nav-link {
+    color: #0a192f !important;
+    font-weight: 600;
+  }
+}
+
+
+.navbar a:hover {
+  color: #00d8ff;
+  /* Frosty blue */
+  text-shadow: 0px 0px 8px rgba(0, 216, 255, 0.8);
+  /* Glow */
+}
+
+.xmas-icicles {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 35px;
+
+  background: url('/themes/winter/static/img/icicles.png');
+  background-position: center top;
+  background-size: contain;
+}
+
+/* General Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.table th {
+  background: #f8fafc;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #4a5568;
+  border-bottom: 1px solid #e2e8f0;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* Table Body Rows */
+.table tr {
+  transition: background-color 0.3s ease;
+}
+
+/* Table Cells */
+.table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #1a202c;
+}
+
+.table a {
+  color: #1a56db;
+  text-decoration: none;
+}
+
+.table td:first-child {
+  font-weight: bold;
+  color: #333;
+}
+
+.table th, .table td {
+  border-bottom: 1px solid rgba(200, 200, 200, 0.6);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+
+h1,
+h3 {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: bold;
+  color: #003366;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  //margin-top: 30px;
+}
+
+#score-graph {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Soft translucent white background */
+  border-radius: 12px;
+  /* Smoother, more modern corners */
+  padding: 15px;
+  /* Adds inner spacing for content */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  /* Adds subtle shadow for separation */
+  backdrop-filter: blur(5px);
+  /* Adds a frosted glass effect */
+  border: 1px solid rgba(200, 200, 200, 0.6);
+  /* Light border for definition */
+  margin-bottom: 4%;
+}
+
+/* Styling the graph lines for visibility */
+#score-graph .line {
+  stroke-width: 2.5px;
+  /* Balanced thickness for lines */
+}
+
+/* Updating labels for clarity */
+#score-graph .label {
+  font-size: 14px;
+  /* Clear and readable font size */
+  font-weight: bold;
+  color: #333333;
+  /* Slightly darker text for contrast */
+}
+
+/* Enhancing grid lines if present */
+#score-graph .grid-line {
+  stroke: rgba(0, 0, 0, 0.1);
+  /* Subtle, soft grid lines */
+}
