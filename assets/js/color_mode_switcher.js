@@ -5,10 +5,6 @@
  * @returns {String} User preferred theme
  */
 function getPreferredTheme() {
-  const storedTheme = localStorage.getItem("theme");
-  if (storedTheme) {
-    return storedTheme;
-  }
   return window.matchMedia("(prefers-color-scheme: dark)");
 }
 
@@ -26,10 +22,4 @@ function showActiveTheme(theme) {
 let currentTheme = getPreferredTheme();
 document.documentElement.setAttribute("data-bs-theme", currentTheme);
 
-// On browser color-scheme change, update
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-  currentTheme = getPreferredTheme();
-  document.documentElement.setAttribute("data-bs-theme", currentTheme);
-  showActiveTheme(currentTheme);
-});
 
