@@ -235,7 +235,11 @@ body {
 }
 
 .custom-page{
-  padding-top: 3.5rem;
+  padding-top: 3.5rem !important;
+}
+
+.custom-page p{
+  font-family: 'Playfair Display', serif !important;
 }
 
 .category-header h3 {
