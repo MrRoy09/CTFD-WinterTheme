@@ -1,30 +1,58 @@
 /* Challenge styles
 -------------------------------------------------- */
+// .challenge-button {
+//   background: rgba(173, 216, 230, 0.9);
+//   font-family: 'Playfair Display', serif;
+//   font-weight: 600;
+//   border-radius: 15px;
+//   color: #003366;
+//   text-align: center;
+//   padding: 20px;
+//   box-shadow: 0 8px 15px rgba(0, 102, 204, 0.3);
+//   transition: transform 0.3s ease, box-shadow 0.3s ease;
+//   margin: 20px auto;
+//   width: 250px;
+//   border: 1px solid #87ceeb;
+// }
+.challenge-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 6px 20px rgba(42, 93, 143, 0.8);
+  cursor: pointer;
+}
+
+.challenge-inner p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn:hover{
+  color: #0A1D37 !important;
+  text-decoration: none !important;
+}
+
 .challenge-button {
-  background: rgba(173, 216, 230, 0.9);
-  /* Light frosty blue */
+  background-image: url(/themes/winter/static/img/snow2.webp);
+  color: #0A1D37;
   border-radius: 15px;
-  /* Smooth rounded corners */
-  color: #003366;
-  /* Dark blue text for readability */
-  font-family: 'Arial', sans-serif;
-  /* Clean font */
-  font-size: 18px;
-  /* Slightly larger text */
+  border-width: 0px;
+  padding: 15px;
   text-align: center;
-  /* Center-align the text */
-  padding: 20px;
-  /* Add some padding for spacing */
-  box-shadow: 0 8px 15px rgba(0, 102, 204, 0.3);
-  /* Soft shadow with blue tint */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Smooth animations */
-  margin: 20px auto;
-  /* Center the div horizontally */
-  width: 250px;
-  /* Set a fixed width for consistency */
-  border: 1px solid #87ceeb;
-  /* Subtle border to frame the div */
+  background-size: cover;
+
+
+  &.challenge-solved {
+    background-image: url(/themes/winter/static/img/chal_solved.webp);
+    background-size: cover;
+    opacity: 1;
+    .challenge-button:hover {
+      transform: scale(1.03);
+      background-color: #2a5d8f;
+      color: #0A1D37;
+      box-shadow: 0px 6px 20px rgba(42, 93, 143, 0.8);
+      cursor: pointer;
+    }
+  }
 }
 
 .challenge-desc {
@@ -35,36 +63,10 @@
   }
 }
 
-[data-bs-theme="light"] .challenge-button {
-  border: none;
-  box-shadow: 0 0 15px var(--bs-secondary);
-
-  &.challenge-solved {
-    background-image: url(/themes/winter/static/img/snow.jpeg);
-
-    opacity: 1;
-    &:hover {
-      background-color: #37d63e;
-    }
-  }
-}
-
-[data-bs-theme="dark"] .challenge-button {
-  border: none;
-
-  &.challenge-solved {
-    background-color: #29c830;
-
-    &:hover {
-      background-color: #37d63e;
-    }
-  }
-}
-
 .chal h1,
 .chal p {
+  font-family: 'Playfair Display', serif;
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.6);
-  /* Light frosty glow effect */
   margin: 10px 0;
-  /* Space between text elements */
 }
+

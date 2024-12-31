@@ -86,7 +86,6 @@ body {
   display: block;
   background: rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid #dcdcdc;
-
   box-shadow: 0 2px 8px rgba(150, 180, 210, 0.2);
 
   a,
@@ -99,9 +98,7 @@ body {
 
 .navbar a:hover {
   color: #00d8ff;
-  /* Frosty blue */
   text-shadow: 0px 0px 8px rgba(0, 216, 255, 0.8);
-  /* Glow */
 }
 
 .xmas-icicles {
@@ -116,48 +113,83 @@ body {
   background-size: contain;
 }
 
-/* General Table Styling */
 .table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures borders are clipped when rounded */
+  background: rgba(255, 255, 255, 0.6) !important; /* Semi-transparent white */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table>:not(caption)>*>* {
+  box-shadow: none !important; /* Remove box-shadow */
+  background-color: #ffffff8c ; /* Semi-transparent white */
 }
 
 .table th {
-  background: #f8fafc;
+  background: rgba(201, 221, 237, 0.6); /* Light frosty blue */
   padding: 12px 16px;
   text-align: left;
   font-weight: 600;
-  color: #4a5568;
-  border-bottom: 1px solid #e2e8f0;
+  color: #2d3748; /* Dark gray for contrast */
+  border-bottom: 1px solid rgba(201, 221, 237, 0.9); /* Soft blue border */
   text-transform: uppercase;
   font-size: 12px;
 }
 
-/* Table Body Rows */
-.table tr {
-  transition: background-color 0.3s ease;
+
+.table tr:hover {
+  background-color: rgba(210, 230, 255, 0.9); /* Highlight row on hover */
+  cursor: pointer;
 }
 
-/* Table Cells */
 .table td {
   padding: 12px 16px;
-  border-bottom: 1px solid #e2e8f0;
-  color: #1a202c;
+  text-align: left;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.6);
+  color: #2c5282; /* Frosty deep blue for text */
 }
 
 .table a {
-  color: #1a56db;
+  position: relative;
   text-decoration: none;
+  text-align: center;
+  color: #000000;
+  display: inline-block; /* Ensures smooth scaling */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.table a:hover {
+  color: #2b6cb0; /* Slightly darker blue */
+  transform: scale(1.2); /* Slight zoom-in effect */
+}
+
+.table a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #2b6cb0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.table a:hover::after {
+  transform: scaleX(1); /* Grow the underline */
+}
+
+
+.table a:focus {
+  text-decoration: underline;
 }
 
 .table td:first-child {
   font-weight: bold;
-  color: #333;
-}
-
-.table th, .table td {
-  border-bottom: 1px solid rgba(200, 200, 200, 0.6);
+  color: #1e293b; /* Darker blue-gray for emphasis */
 }
 
 .table tr:last-child td {
@@ -165,32 +197,82 @@ body {
 }
 
 
-h1, h3 {
-  font-family: "Manrope", serif;
-  font-optical-sizing: auto;
-  font-size: 40px;
-  letter-spacing: -0.5px;
-  color: #2c3e50;
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+.heading-text{
+  font-size: 110% !important;
+  font-weight: bold !important;
 }
 
-.category-header h3{
-  color: black;
+.score-text{
+  font-weight: normal !important;
+}
+
+.score-row{
+  background: rgba(201, 221, 237, 0.1) !important;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+// @media (max-width: 768px) {
+//   .table {
+//     width: 100%;
+//     display: block;
+//     overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
+//   }
+
+//   .table th, .table td {
+//     white-space: nowrap;
+//   }
+// }
+
+.jumbotron h1,
+.jumbotron h3 {
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  font-size: 3.5rem; /* Prominent size */
+  font-weight: 700; /* Bold for impact */
+  color: black; /* Dark bluish tone */
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.category-header h3 {
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  font-size: 2rem; /* Prominent size */
+  font-weight: 700; /* Bold for impact */
+  color: #2a5d8f; /* Dark bluish tone */
+  text-align: center; /* Center alignment */
+  margin: 20px auto; /* Spacing around the title */
+  letter-spacing: 1.5px; /* Slightly spaced letters */
+  text-transform: uppercase; /* Full caps for emphasis */
+  line-height: 1.2; /* Good vertical spacing */
+}
+
+@keyframes glow {
+  from {
+      text-shadow: 2px 2px 8px rgba(0, 128, 255, 0.5);
+  }
+  to {
+      text-shadow: 2px 2px 12px rgba(0, 128, 255, 1);
+  }
+}
+
+.category-header {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  //backdrop-filter: blur(4px);
+  box-shadow:
+    0 2px 8px rgba(255, 255, 255, 0.3),
+    0 4px 16px rgba(255, 255, 255, 0.2);
 }
 
 #score-graph {
   background-color: rgba(255, 255, 255, 0.8);
-  /* Soft translucent white background */
   border-radius: 12px;
-  /* Smoother, more modern corners */
   padding: 15px;
-  /* Adds inner spacing for content */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-  /* Adds subtle shadow for separation */
   backdrop-filter: blur(5px);
-  /* Adds a frosted glass effect */
   border: 1px solid rgba(200, 200, 200, 0.6);
-  /* Light border for definition */
   margin-bottom: 2%;
 }
 
@@ -213,4 +295,29 @@ h1, h3 {
 #score-graph .grid-line {
   stroke: rgba(0, 0, 0, 0.1);
   /* Subtle, soft grid lines */
+}
+
+ribbon-wrapper {
+  //display: none; /* Hidden by default */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent interference with user actions */
+}
+
+.ribbon-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/themes/winter/static/img/ribbon.webp') no-repeat center center;
+  background-size: contain; /* Adjust to fit the card */
+}
+
+/* Class to show the ribbon when solved */
+.solved .ribbon-wrapper {
+  display: block;
 }
