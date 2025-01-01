@@ -15,7 +15,8 @@
 @use "includes/icons/award-icons";
 @use "includes/icons/flag-icons";
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Manrope:wght@200..800&display=swap');
 
 h1,
 h2 {
@@ -226,19 +227,23 @@ body {
 
 .jumbotron h1,
 .jumbotron h3 {
-  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
   font-size: 3.5rem; /* Prominent size */
-  font-weight: 700; /* Bold for impact */
   color: black; /* Dark bluish tone */
   letter-spacing: 1px;
   line-height: 1.2;
 }
 
 .category-header h3 {
-  font-family: 'Playfair Display', serif; /* Elegant serif font */
-  font-size: 2rem; /* Prominent size */
-  font-weight: 700; /* Bold for impact */
-  color: black; /* Dark bluish tone */
+  font-family: 'Cinzel', serif; /* Replace with desired font-family */
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF; /* Snow White */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-align: center; /* Center alignment */
   margin: 20px auto; /* Spacing around the title */
   letter-spacing: 1.5px; /* Slightly spaced letters */
@@ -256,14 +261,20 @@ body {
 }
 
 .category-header {
+
   text-align: center;
   background: rgba(255, 255, 255, 0.1);
-  padding: 8px 16px;
+  padding: 16px 16px;
   border-radius: 8px;
-  //backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   box-shadow:
     0 2px 8px rgba(255, 255, 255, 0.3),
     0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+.challenges-row{
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 #score-graph {
